@@ -2,13 +2,70 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
   <title>Конвертер величин</title>
+  <meta charset="UTF-8" />
+
+  <script type="module" src="src/index.js"></script>
 </head>
 
 <body>
-  <div id="app"></div>
-  <script type="module" src="/main.js"></script>
+  <div id="converter">
+    <h1>Конвертер величин</h1>
+    <label for="category">Категория:</label>
+    <br>
+    <select id="category">
+      <option value="weight">Масса</option>
+      <option value="volume">Объём</option>
+    </select>
+    <br>
+    <input type="number" id="value1"></input>
+    <select id="unit1" class="units"></select>
+    <span>=</span>
+    <input type="number" id="value2"></input>
+    <select id="unit2" class="units"></select>
+    <br>
+    <br>
+    <button id="showAddModal">Добавить свою единицу измерения</button>
+    <button id="showRemoveModal">Удалить свою единицу измерения</button>
+  </div>
+
+  <div id="addModal" class="modal" hidden>
+    <h1>Добавить свою единицу измерения</h1>
+    <label for="customCategoryAdd">Категория:</label>
+    <br>
+    <select id="customCategoryAdd">
+      <option value="weight">Масса</option>
+      <option value="volume">Объём</option>
+    </select>
+    <br>
+    <span>1</span>
+    <input type="text" id="customLabel" placeholder="единица измерения">
+    </input>
+    <span>=</span>
+    <input type="number" id="customValue"></input>
+    <span id="baseUnit"></span>
+    <br>
+    <br>
+    <button class="cancel">Отмена</button>
+    <button id="addUnit">Добавить</button>
+  </div>
+</body>
+
+<div id="removeModal" class="modal" hidden>
+  <h1>Удалить свою единицу измерения</h1>
+  <label for="customCategoryRemove">Категория:</label>
+  <br>
+  <select id="customCategoryRemove">
+    <option value="weight">Масса</option>
+    <option value="volume">Объём</option>
+  </select>
+  <br>
+  <select id="customUnit" class="units"></select>
+  <br>
+  <br>
+  <button class="cancel">Отмена</button>
+  <button id="removeUnit">Удалить</button>
+</div>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 import { vi, expect, test, afterEach } from 'vitest';
-import { Converter } from '../src/converter';
+import { Converter } from '../src/converter.js';
 
 const crypto = require('crypto');
 vi.stubGlobal('crypto', crypto);
